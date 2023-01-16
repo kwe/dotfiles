@@ -1,8 +1,7 @@
-require("theprimeagen.set")
-require("theprimeagen.remap")
-
+require("kwe.remap")
+require("kwe.set")
 local augroup = vim.api.nvim_create_augroup
-local ThePrimeagenGroup = augroup('ThePrimeagen', {})
+local kweGroup = augroup('kwe', {})
 
 local autocmd = vim.api.nvim_create_autocmd
 local yank_group = augroup('HighlightYank', {})
@@ -23,7 +22,7 @@ autocmd('TextYankPost', {
 })
 
 autocmd({"BufWritePre"}, {
-    group = ThePrimeagenGroup,
+    group = kweGroup,
     pattern = "*",
     command = [[%s/\s\+$//e]],
 })
